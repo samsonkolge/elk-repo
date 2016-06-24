@@ -1,9 +1,11 @@
 require 'spec_helper'
 
 describe 'elk-repo::default' do
-  # Serverspec examples can be found at
-  # http://serverspec.org/resource_types.html
-  it 'does something' do
-    skip 'Replace this with meaningful tests'
+
+# Install java
+  describe apt('ppa:webupd8team/java') do
+    it { should exist }
+    it { should be_enabled }
   end
+
 end
